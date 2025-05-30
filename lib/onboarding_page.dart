@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'sign_up_page.dart';
+import 'log_in_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -16,15 +18,14 @@ class OnboardingPage extends StatelessWidget {
               children: [
                 // App Logo
                 Image.asset(
-                  'assets/images/logo.png'
-                      , // Replace with your image path
+                  'assets/images/logo.png', // Replace with your image path
                   height: 180,
                 ),
                 const SizedBox(height: 40),
 
                 // Title Text
                 const Text(
-                  "Let’s Get Started!",
+                  "Let's Get Started!",
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -50,11 +51,16 @@ class OnboardingPage extends StatelessWidget {
                   width: 200,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigate to sign up
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpPage(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF2E7D32),
-                      foregroundColor: Colors.black,
+                      foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -74,7 +80,12 @@ class OnboardingPage extends StatelessWidget {
                   width: 200,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigate to login
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LogInPage(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFC8E6C9),
