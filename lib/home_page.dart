@@ -258,7 +258,7 @@ class _HomePageState extends State<HomePage> {
     final List<Map<String, dynamic>> navItems = [
       {'icon': Icons.camera_alt_outlined, 'label': 'Camera'},
       {'icon': Icons.local_hospital_outlined, 'label': 'Diagnosis'},
-      {'icon': Icons.shopping_cart_outlined, 'label': 'View Cart'},
+      {'icon': Icons.shopping_cart_outlined, 'label': 'View Cart'}, // Label updated to 'View Cart'
       {'icon': Icons.store_outlined, 'label': 'MarketPlace'},
       {'icon': Icons.add_circle_outline, 'label': 'Post your Plant'},
       {'icon': Icons.chat_bubble_outline, 'label': 'Community\nChat'},
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                     builder: (context) => const PeopleChatPage(),
                   ),
                 );
-              } else if (label == 'Cart') { // <--- NEW: Cart navigation block
+              } else if (label == 'View Cart') { // <--- FIXED: Now checking for 'View Cart'
                 Navigator.push(
                   context,
                   MaterialPageRoute(
