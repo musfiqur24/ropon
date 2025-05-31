@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'bougainvillea_detail_page.dart';
 import 'marketplace_page.dart';
+import 'camera_page.dart'; // <--- Changed import to camera_page.dart
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -147,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(width: 20), // Spacing between image and text
                   // Text Content (right side)
-                  Container(
+                  SizedBox( // Changed Container to SizedBox for simplicity, maintaining width
                     width: 140, // Fixed width for text section
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -236,7 +237,7 @@ class _HomePageState extends State<HomePage> {
               color: Colors.grey.shade500,
             ),
             suffixIcon: Icon(
-              Icons.fullscreen,
+              Icons.fullscreen, // Assuming this is for filter or scan
               color: Colors.grey.shade500,
             ),
             border: InputBorder.none,
@@ -275,15 +276,24 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // Navigate to marketplace if MarketPlace is tapped
-              if (navItems[index]['label'] == 'MarketPlace') {
+              // Navigate based on tapped item
+              final String label = navItems[index]['label'];
+              if (label == 'MarketPlace') {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const MarketplacePage(),
                   ),
                 );
+              } else if (label == 'Camera') { // <--- Condition for Camera tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CameraPage(), // <--- Navigate to CameraPage
+                  ),
+                );
               }
+              // You can add more conditions for other navigation items here
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -385,13 +395,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildPlantCard(
-    String bengaliName,
-    String englishName,
-    String description,
-    String imagePath,
-    Color badgeColor,
-    String badgeText,
-  ) {
+      String bengaliName,
+      String englishName,
+      String description,
+      String imagePath,
+      Color badgeColor,
+      String badgeText,
+      ) {
     return GestureDetector(
       onTap: () {
         // Navigate to detail page if it's bougainvillea
