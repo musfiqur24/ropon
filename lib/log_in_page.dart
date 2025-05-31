@@ -33,7 +33,7 @@ class _LogInPageState extends State<LogInPage> {
               child: Opacity(
                 opacity: 0.3,
                 child: Image.asset(
-                  'assets/images/leaf_decoration.png', // Add your leaf decoration
+                  'assets/images/background.png',
                   height: 150,
                   width: 150,
                 ),
@@ -45,7 +45,7 @@ class _LogInPageState extends State<LogInPage> {
               child: Opacity(
                 opacity: 0.3,
                 child: Image.asset(
-                  'assets/images/leaf_decoration.png', // Add your leaf decoration
+                  'assets/images/background.png',
                   height: 120,
                   width: 120,
                 ),
@@ -69,7 +69,7 @@ class _LogInPageState extends State<LogInPage> {
                       ),
                       child: Center(
                         child: Image.asset(
-                          'assets/images/logo.png', // Your green shopping cart logo
+                          'assets/images/logo.png',
                           height: 70,
                           width: 70,
                         ),
@@ -112,7 +112,7 @@ class _LogInPageState extends State<LogInPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Navigate to HomePage after successful login
+                          // Simulate login logic here
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
@@ -144,7 +144,7 @@ class _LogInPageState extends State<LogInPage> {
                     // Forgot Password Link
                     TextButton(
                       onPressed: () {
-                        // Handle forgot password
+                        // Handle forgot password functionality
                       },
                       child: const Text(
                         'Forgot Password?',

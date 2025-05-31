@@ -50,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
               child: Opacity(
                 opacity: 0.3,
                 child: Image.asset(
-                  'assets/images/leaf_decoration.png', // Add your leaf decoration
+                  'assets/images/background.png', // Add your leaf decoration
                   height: 120,
                   width: 120,
                 ),

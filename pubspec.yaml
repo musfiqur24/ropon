@@ -54,8 +54,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/logo.png
-    - assets/images/leaf_decoration.png
     - assets/images/girl_with_plant.png
+    - assets/images/background.png
     - assets/images/bougainvillea.png
     - assets/images/tomato.png
     - assets/images/bougainvillea_pink.png
