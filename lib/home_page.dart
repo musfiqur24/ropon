@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'bougainvillea_detail_page.dart';
 import 'marketplace_page.dart';
+import 'camera_classifier.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -276,12 +277,18 @@ class _HomePageState extends State<HomePage> {
           return GestureDetector(
             onTap: () {
               // Navigate to marketplace if MarketPlace is tapped
-              if (navItems[index]['label'] == 'MarketPlace') {
+              String label = navItems[index]['label'];
+              if (label == 'MarketPlace') {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const MarketplacePage(),
-                  ),
+                      builder: (context) => const MarketplacePage()),
+                );
+              } else if (label == 'Camera') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ClassifierScreen()),
                 );
               }
             },

@@ -1,0 +1,4 @@
+potato_early_blight
+potato_healthy
+tomato_bacterial_spot
+tomato_healthy

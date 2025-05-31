@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'onboarding_page.dart';  // import your onboarding page
+import 'onboarding_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Onboarding Demo',
-      home: const OnboardingPage(),  // your onboarding page widget
+      home: OnboardingPage(), // your onboarding page widget
     );
   }
 }
