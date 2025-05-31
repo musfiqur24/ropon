@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'bougainvillea_detail_page.dart';
 import 'marketplace_page.dart';
-import 'camera_page.dart'; // <--- Changed import to camera_page.dart
+import 'camera_page.dart';
+import 'upload_post.dart'; // Correct import
+import 'people_chat.dart'; // Import the people_chat page
+import 'cart_page.dart'; // <--- NEW: Import the cart page
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -255,7 +258,7 @@ class _HomePageState extends State<HomePage> {
     final List<Map<String, dynamic>> navItems = [
       {'icon': Icons.camera_alt_outlined, 'label': 'Camera'},
       {'icon': Icons.local_hospital_outlined, 'label': 'Diagnosis'},
-      {'icon': Icons.shopping_cart_outlined, 'label': 'Cart'},
+      {'icon': Icons.shopping_cart_outlined, 'label': 'View Cart'}, // Label updated to 'View Cart'
       {'icon': Icons.store_outlined, 'label': 'MarketPlace'},
       {'icon': Icons.add_circle_outline, 'label': 'Post your Plant'},
       {'icon': Icons.chat_bubble_outline, 'label': 'Community\nChat'},
@@ -285,11 +288,32 @@ class _HomePageState extends State<HomePage> {
                     builder: (context) => const MarketplacePage(),
                   ),
                 );
-              } else if (label == 'Camera') { // <--- Condition for Camera tap
+              } else if (label == 'Camera') {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CameraPage(), // <--- Navigate to CameraPage
+                    builder: (context) => const CameraPage(),
+                  ),
+                );
+              } else if (label == 'Post your Plant') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UploadPostPage(),
+                  ),
+                );
+              } else if (label == 'Community\nChat') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PeopleChatPage(),
+                  ),
+                );
+              } else if (label == 'View Cart') { // <--- FIXED: Now checking for 'View Cart'
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CartPage(),
                   ),
                 );
               }
@@ -432,8 +456,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             // Plant Image
             Container(
-              width: 60,
-              height: 60,
+              width: 70,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -470,7 +494,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               englishName,
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 14,
                                 color: Colors.grey.shade600,
                               ),
                             ),
@@ -498,7 +522,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            const SizedBox(width: 10),
+            const SizedBox(width: 14),
 
             // Badge
             Container(
