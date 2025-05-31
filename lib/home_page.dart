@@ -268,7 +268,7 @@ class _HomePageState extends State<HomePage> {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          childAspectRatio: 1.2,
+          childAspectRatio: 1.0,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
@@ -299,8 +299,8 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 50,
-                  height: 50,
+                  width: 60,
+                  height: 60,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
@@ -316,15 +316,15 @@ class _HomePageState extends State<HomePage> {
                   child: Icon(
                     navItems[index]['icon'],
                     color: const Color(0xFF2E7D32),
-                    size: 24,
+                    size: 32,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 Text(
                   navItems[index]['label'],
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Colors.black87,
                     fontWeight: FontWeight.w500,
                   ),
